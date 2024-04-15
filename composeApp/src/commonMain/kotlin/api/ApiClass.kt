@@ -20,21 +20,10 @@ class ApiClass {
         }
     }
 
-   suspend fun githubUsers(): Result<List<QuotesDataClassItem>>{
-        val response = client.get("https://zenquotes.io/api/quotes/[YOUR_API_KEY]")
-     /*   {
-            headers {
-                append(HttpHeaders.Authorization, ApiHeader.auth)
-            }
-        }*/
-
+   suspend fun githubUsers(): List<QuotesDataClassItem>{
+        val response = client.get("https://zenquotes.io/api/quotes")
         return response.body()
     }
-/*
-    suspend fun getUser(userName:String):SearchUserDataClass{
-        val response = client.get("https://api.github.com/users/$userName")
-        return response.body()
 
-    }*/
 
 }
