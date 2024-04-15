@@ -5,6 +5,7 @@ import api.ApiClass
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import screens.LargeMainScreenUI
+import screens.SmallMainScreenUI
 
 @Composable
 @Preview
@@ -13,6 +14,8 @@ fun App() {
 
         if (getPlatform().name.contains("Desktop")){
             LargeMainScreenUI()
+        } else {
+            SmallMainScreenUI()
         }
 
         /*val scope = rememberCoroutineScope()
